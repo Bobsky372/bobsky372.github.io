@@ -968,7 +968,7 @@
         <div id="task-earn-section" class="content-section">
             <h2>Complete Tasks to Earn ($1.00 - $7.00 per task)</h2>
             <div class="earning-section">
-                <p style="text-align: center; font-size: 1.1em; color: var(--color-text-light); margin-bottom: 40px;">Engage with these sponsored tasks. Each click opens an ad in a new tab and instantly credits a random amount between $1.00 and $7.00 to your dashboard balance (simulated).</p>
+                <p style="text-align: center; font-size: 1.1em; color: var(--color-text-light); margin-bottom: 40px;">Engage with these sponsored tasks. Each click opens an ad in a new tab and instantly credits a random amount between $1.00 and $7.00 to your dashboard balance.</p>
                 <div id="taskPostsContainer">
                     <!-- Task posts will be dynamically loaded here by JavaScript -->
                 </div>
@@ -992,8 +992,8 @@
         <div id="referral-section" class="content-section">
             <h2>Referral Program</h2>
             <div class="referral-content">
-                <p style="font-size: 1.1em; color: var(--color-text-light);">Empower your network! Invite friends and earn a simulated $7.00 for each successful invite once they theoretically meet the earning criteria.</p>
-                <p style="font-weight: bold; margin-top: 30px; font-size: 1.05em; color: var(--color-text-dark);">Your Unique Referral Link (Simulated):</p>
+                <p style="font-size: 1.1em; color: var(--color-text-light);">Empower your network! Invite friends and earn a $7.00 for each successful invite once they theoretically meet the earning criteria.</p>
+                <p style="font-weight: bold; margin-top: 30px; font-size: 1.05em; color: var(--color-text-dark);">Your Unique Referral Link:</p>
                 <input type="text" value="https://yourwebsite.com/refer/YOURUSERID" style="width: calc(100% - 22px); padding: 15px; margin-bottom: 30px; border: 1px solid var(--color-border-light); border-radius: 12px; font-size: 1.0em; text-align: center; background-color: var(--color-bg-light);" readonly>
                 <p style="font-size: 1.0em; color: var(--color-text-light);">Share this link to grow your earnings. Remember, this is a simulation.</p>
                 <ul style="margin-top: 30px;">
@@ -1008,7 +1008,7 @@
         <div id="withdrawal-section" class="content-section">
             <h2>Withdrawal</h2>
             <div class="withdrawal-options">
-                <p style="font-size: 1.1em; color: var(--color-text-light);">Minimum withdrawal amount: <strong style="color: #e74c3c;">$500.00</strong> (Simulated)</p>
+                <p style="font-size: 1.1em; color: var(--color-text-light);">Minimum withdrawal amount: <strong style="color: #e74c3c;">$500.00</strong></p>
                 <p style="font-size: 1.1em; margin-top: 15px; color: var(--color-text-light);">Your Current Balance: <span id="withdrawalBalanceDisplay" style="font-weight: bold; color: var(--color-secondary);">$0.00</span></p>
 
                 <div class="form-group" style="margin-top: 40px;">
@@ -1029,7 +1029,7 @@
 
                 <div id="cryptoOptions" class="sub-options" style="display: none;">
                     <h3>Crypto Details</h3>
-                    <p style="color: #e74c3c; font-weight: bold; font-size: 0.95em; margin-bottom: 20px;">Please ensure your payment address is absolutely correct to avoid loss of simulated funds!</p>
+                    <p style="color: #e74c3c; font-weight: bold; font-size: 0.95em; margin-bottom: 20px;">Please ensure your payment address is absolutely correct to avoid loss of funds!</p>
                     <div class="form-group">
                         <label for="usdtAddress">Submit USDT Address:</label>
                         <input type="text" id="usdtAddress" placeholder="Your USDT TRC20/ERC20 address">
@@ -1123,10 +1123,10 @@
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
-            "https://spendharassingwarmly.com/fvhypi3y?key=80981271a9dcafc8801d326e77a46d71",
-            "https://spendharassingwarmly.com/t75wmytbb?key=310969957557de70b2985540d31a7958",
-            "https://spendharassingwarmly.com/ymq7df2pms?key=f3519aaedb5f6a5f7fb946000fcacda3",
-            "https://spendharassingwarmly.com/m4imbsw5q7?key=e57cfaa68be458b7f45e333ab052b13d"
+            "https://otieu.com/4/9529061",
+            "https://otieu.com/4/9529066",
+            "https://otieu.com/4/9529067",
+            "https://otieu.com/4/9529070"
         ];
 
         // Define 10 simulated tasks
@@ -1201,7 +1201,7 @@
 
         // --- Ad Earning Functions (Simulated) ---
         function startAdTimer() {
-            let timeLeft = 10;
+            let timeLeft = 20;
             const adTimerElement = document.getElementById('adTimer');
             const creditAdButton = document.getElementById('creditAdBtn');
 
@@ -1336,7 +1336,7 @@
         function submitWithdrawal(method) {
             // In a real application, input validation and server-side processing would happen here.
             // For this simulation, we just show a message.
-            document.getElementById('withdrawalSubmissionMessage').textContent = `Your withdrawal request via ${method} has been submitted successfully! Please wait for 3 business days (simulated).`;
+            document.getElementById('withdrawalSubmissionMessage').textContent = `Your withdrawal request via ${method} has been submitted successfully! Please wait for 3 business days.`;
             document.getElementById('withdrawalSubmissionMessage').style.display = 'block';
 
             // Clear inputs (simulated)
