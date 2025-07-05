@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tunggu Sebentar...</title>
+  <script>
+    // Ambil link dari URL
+    const params = new URLSearchParams(window.location.search);
+    const directLink = params.get("link");
+
+    // Redirect ke iklan dulu
+    setTimeout(() => {
+      window.open(directLink, "_blank");
+
+      // Setelah 10 detik, kembali ke halaman utama
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 10000);
+    }, 500); // Delay kecil untuk membuka tab baru
+  </script>
+</head>
+<body>
+  <h2>Sedang mengarahkan ke iklan...</h2>
+  <p>Mohon tunggu sebentar. Anda akan kembali setelah 10 detik.</p>
+</body>
+</html>
