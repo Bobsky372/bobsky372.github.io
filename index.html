@@ -1265,14 +1265,14 @@
                 const taskLinkElement = document.getElementById(`task-link-${taskId}`);
                 
                 if (taskMessageElement) {
-                    taskMessageElement.textContent = `Task completed! You earned $${taskEarning.toFixed(2)}!`;
+                 //   taskMessageElement.textContent = `Task completed! You earned $${taskEarning.toFixed(2)}!`;
                 }
                 if (taskLinkElement) {
-                    taskLinkElement.textContent = `Completed! Earned $${taskEarning.toFixed(2)}`;
-                    taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
+                  //  taskLinkElement.textContent = `Completed! Earned $${taskEarning.toFixed(2)}`;
+                  //  taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
                  //   taskLinkElement.style.pointerEvents = 'none';
                 //    taskLinkElement.dataset.completed = 'true';
-                    taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
+                //    taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
                 //    taskLinkElement.style.transform = 'none'; /* Remove hover transform for completed */
                 }
             }
@@ -1303,14 +1303,14 @@
                     const taskMessageElement = document.getElementById(`task-message-${task.id}`);
                     const taskLinkElement = document.getElementById(`task-link-${task.id}`);
                     if (taskMessageElement) {
-                        taskMessageElement.textContent = `Task completed! You earned $${task.earning.toFixed(2)}!`;
+                     //   taskMessageElement.textContent = `Task completed! You earned $${task.earning.toFixed(2)}!`;
                     }
                     if (taskLinkElement) {
-                        taskLinkElement.textContent = `Completed! Earned $${task.earning.toFixed(2)}`;
-                        taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
+                  //      taskLinkElement.textContent = `Completed! Earned $${task.earning.toFixed(2)}`;
+                 //       taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
                    //     taskLinkElement.style.pointerEvents = 'none';
                    //     taskLinkElement.dataset.completed = 'true';
-                        taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
+                //        taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
                     }
                 }
             });
