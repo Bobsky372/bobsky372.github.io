@@ -980,7 +980,7 @@
                 <p style="text-align: center; font-size: 1.1em; color: var(--color-text-light); margin-bottom: 40px;">Focus on the ad below for 10 seconds. Once the timer completes, activate the button to receive your random earnings!</p>
                 <div class="ad-container">
                     <h3>Ad View Opportunity</h3>
-                    <iframe id="watchAdFrame" src="https://otieu.com/4/9529061" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="watchAdFrame" src="https://data852.click/734fef779443de2be975/67e4a7a633/?placementName=new_sponsored4" frameborder="0" allowfullscreen></iframe>
                     <p class="timer-display">Time remaining: <span id="adTimer">10</span> seconds</p>
                     <button id="creditAdBtn" class="action-button" disabled onclick="creditAd()">Credit My Earnings</button>
                     <p id="adEarningMessage" class="earning-message"></p>
@@ -1122,10 +1122,10 @@
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
-            "https://otieu.com/4/9529061",
-            "https://otieu.com/4/9529066",
-            "https://otieu.com/4/9529067",
-            "https://otieu.com/4/9529070"
+            "https://data852.click/734fef779443de2be975/2f9913e92f/?placementName=new_sponsored",
+            "https://data852.click/734fef779443de2be975/693741831e/?placementName=new_sponsored2",
+            "https://data852.click/734fef779443de2be975/2ccdf05dd3/?placementName=new_sponsored3",
+            "https://data852.click/734fef779443de2be975/67e4a7a633/?placementName=new_sponsored4"
         ];
 
         // Define 10 simulated tasks
@@ -1270,10 +1270,10 @@
                 if (taskLinkElement) {
                     taskLinkElement.textContent = `Completed! Earned $${taskEarning.toFixed(2)}`;
                     taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
-                    taskLinkElement.style.pointerEvents = 'none';
-                    taskLinkElement.dataset.completed = 'true';
+                 //   taskLinkElement.style.pointerEvents = 'none';
+                //    taskLinkElement.dataset.completed = 'true';
                     taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
-                    taskLinkElement.style.transform = 'none'; /* Remove hover transform for completed */
+                //    taskLinkElement.style.transform = 'none'; /* Remove hover transform for completed */
                 }
             }
             // Note: The browser will automatically open the link in a new tab because it's an <a> tag with target="_blank"
@@ -1308,8 +1308,8 @@
                     if (taskLinkElement) {
                         taskLinkElement.textContent = `Completed! Earned $${task.earning.toFixed(2)}`;
                         taskLinkElement.style.background = 'linear-gradient(45deg, var(--color-secondary) 0%, #218838 100%)';
-                        taskLinkElement.style.pointerEvents = 'none';
-                        taskLinkElement.dataset.completed = 'true';
+                   //     taskLinkElement.style.pointerEvents = 'none';
+                   //     taskLinkElement.dataset.completed = 'true';
                         taskLinkElement.style.boxShadow = '0 6px 20px rgba(40, 167, 69, 0.45)';
                     }
                 }
