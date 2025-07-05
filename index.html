@@ -937,28 +937,7 @@
                 font-size: 0.95em;
             }
         }
-      #custom-ipp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 280px;
-      background: #fff;
-      border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      padding: 15px;
-      border-radius: 10px;
-      z-index: 9999;
-      font-family: sans-serif;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    #custom-ipp:hover {
-      background: #f5f5f5;
-      transform: scale(1.03);
-    }
-    .hidden-link {
-      display: none;
-    }
+        
     </style>
 </head>
 <body>
@@ -1113,16 +1092,6 @@
             </div>
         </div>
     </div>
-<div style="height: 1200px;"></div> <!-- biar bisa scroll -->
-
-  <!-- Iklan Melayang -->
-  <div id="custom-ipp">
-    <h4>🔥 Iklan Menarik</h4>
-    <p>Klik untuk mendapatkan reward!</p>
-  </div>
-
-  <!-- Link tersembunyi ke redirect.html -->
-  <a id="real-link" class="hidden-link" href="#" target="_self" rel="noopener">Go</a>
    
     <!-- AI Chatbox Trigger Button -->
     <button id="chatboxTrigger">💬</button>
@@ -1151,38 +1120,7 @@
     <div id="notification-bar"></div>
 
     <script>
-    const ipp = document.getElementById("custom-ipp");
-    const realLink = document.getElementById("real-link");
 
-    // Daftar link kamu
-    const links = [
-      "https://data852.click/734fef779443de2be975/2f9913e92f/?placementName=new_sponsored",
-      "https://data852.click/734fef779443de2be975/693741831e/?placementName=new_sponsored2",
-      "https://data852.click/734fef779443de2be975/2ccdf05dd3/?placementName=new_sponsored3"
-    ];
-
-    // Pilih salah satu
-    const selectedLink = links[Math.floor(Math.random() * links.length)];
-    const redirectURL = "redirect.html?link=" + encodeURIComponent(selectedLink);
-
-    // Simpan ke <a> href-nya
-    realLink.href = redirectURL;
-
-    // Gesture valid: scroll dulu, baru klik/mousedown = trigger klik
-    let userScrolled = false;
-    window.addEventListener("scroll", () => {
-      userScrolled = true;
-    });
-
-    ipp.addEventListener("mousedown", () => {
-      if (userScrolled) {
-        setTimeout(() => {
-          realLink.click(); // trigger klik asli
-        }, Math.floor(Math.random() * 400 + 200)); // delay acak (200–600ms)
-      } else {
-        alert("Silakan scroll halaman terlebih dahulu sebelum klik iklan.");
-      }
-    });
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
