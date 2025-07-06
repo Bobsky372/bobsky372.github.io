@@ -5,15 +5,6 @@
     <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9529012,document.createElement('script'))</script>
     <meta name="description" content="View high-quality ads and earn rewards. This site delivers ad content from premium partners under fair usage rules and anti-bot protection.">
     <meta name="keywords" content="monetag ads, view ads, reward ads, advertising network, monetization, impressions, click-through, traffic quality">
-    <script>
-    grecaptcha.ready(function() {
-    grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
-      }).catch(function(error) {
-        alert("reCAPTCHA failed. Please reload the page.");
-        console.error("reCAPTCHA error:", error);
-      });
-    });     // Define 10 simulated tasks
-   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ULTRA PREMIUM Watch Ads & Earn</title>
@@ -1135,10 +1126,10 @@
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
-            "https://data852.click/734fef779443de2be975/2f9913e92f/?placementName=new_sponsored",
-            "https://data852.click/734fef779443de2be975/693741831e/?placementName=new_sponsored2",
-            "https://data852.click/734fef779443de2be975/2ccdf05dd3/?placementName=new_sponsored3",
-            "https://data852.click/734fef779443de2be975/67e4a7a633/?placementName=new_sponsored4"
+            "https://youtube.com",
+            "https://youtube.com",
+            "https://youtube.com",
+            "https://youtube.com"
         ]; 
       
         const tasks = JSON.parse(localStorage.getItem('simulatedTasks')) || [];
@@ -1211,6 +1202,8 @@
 
         // --- Ad Earning Functions (Simulated) ---
         function startAdTimer() {
+            grecaptcha.ready(function() {
+            grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
             let timeLeft = 20;
             const adTimerElement = document.getElementById('adTimer');
             const creditAdButton = document.getElementById('creditAdBtn');
@@ -1229,6 +1222,11 @@
                     document.getElementById('adEarningMessage').textContent = 'Click "Credit My Earnings" to get your reward!';
                 }
             }, 1000);
+          }).catch(function(error) {
+        alert("reCAPTCHA failed. Please reload the page.");
+        console.error("reCAPTCHA error:", error);
+      });
+    });     // Define 10 simulated tasks
         }
 
         function resetAdTimer() {
