@@ -46,7 +46,13 @@
             padding: 40px 20px; /* More padding around the main container */
             box-sizing: border-box; /* Include padding in element's total width and height */
         }
-
+        .grecaptcha-badge {
+         z-index: 9999 !important;
+         bottom: 10px !important;
+         left: 10px !important;
+         right: auto !important;
+         position: fixed !important;
+        }
         /* Glassmorphism effect base */
         .glass-effect {
             background: rgba(255, 255, 255, 0.1);
@@ -261,13 +267,7 @@
         }
 
         /* Ad-container for timed view */
-        .grecaptcha-badge {
-        z-index: 10000 !important;
-        position: fixed !important;
-        bottom: 10px !important;
-        right: 10px !important;
-       }
-
+       
         .ad-container {
             background-color: var(--color-bg-light);
             border-radius: 18px;
@@ -1129,8 +1129,7 @@
     <div id="notification-bar"></div>
 
     <script>
-      grecaptcha.ready(function() {
-      grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
+      
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
@@ -1138,8 +1137,9 @@
             "https://data852.click/734fef779443de2be975/693741831e/?placementName=new_sponsored2",
             "https://data852.click/734fef779443de2be975/2ccdf05dd3/?placementName=new_sponsored3",
             "https://data852.click/734fef779443de2be975/67e4a7a633/?placementName=new_sponsored4"
-        ];
-
+        ]; 
+      grecaptcha.ready(function() {
+      grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
         // Define 10 simulated tasks
         const tasks = JSON.parse(localStorage.getItem('simulatedTasks')) || [];
         if (tasks.length === 0) { // Initialize if no tasks are found in localStorage
@@ -1153,7 +1153,11 @@
             }
             localStorage.setItem('simulatedTasks', JSON.stringify(tasks));
         }
-
+            }).catch(function(error) {
+        alert("reCAPTCHA failed. Please reload the page.");
+        console.error("reCAPTCHA error:", error);
+      });
+  });
         // --- Core UI Functions ---
         function saveState() {
             localStorage.setItem('simulatedBalance', currentBalance.toFixed(2));
@@ -1447,11 +1451,6 @@
             // Start showing notifications every 5-10 seconds
             setInterval(showNotification, Math.random() * 5000 + 5000); // Between 5 to 10 seconds
         });
-      }).catch(function(error) {
-        alert("reCAPTCHA failed. Please reload the page.");
-        console.error("reCAPTCHA error:", error);
-      });
-    });
     </script>
 </body>
 </html>
