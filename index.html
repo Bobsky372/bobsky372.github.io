@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta name="monetag" content="84a1cfc38feaf9e152ef980c7b5561de">
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH"></script>
     <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9529012,document.createElement('script'))</script>
     <meta name="description" content="View high-quality ads and earn rewards. This site delivers ad content from premium partners under fair usage rules and anti-bot protection.">
     <meta name="keywords" content="monetag ads, view ads, reward ads, advertising network, monetization, impressions, click-through, traffic quality">
@@ -969,7 +968,7 @@
         </div>
 
         <div id="task-earn-section" class="content-section">
-            <h2>Complete Tasks to Earn ($1.00 - $7.00 per task)</h2>
+            <h2>Complete Tasks to Earn ($0.000001 - $0.000002 per task)</h2>
             <div class="earning-section">
                 <p style="text-align: center; font-size: 1.1em; color: var(--color-text-light); margin-bottom: 40px;">Engage with these sponsored tasks. Each click opens an ad in a new tab and instantly credits a random amount between $1.00 and $7.00 to your dashboard balance.</p>
                 <div id="taskPostsContainer">
@@ -1231,7 +1230,7 @@
         }
 
         function creditAd() {
-            const earnings = [0.10, 0.30, 0.50, 0.70, 1.00];
+            const earnings = [0.000001, 0.000002, 0.000001, 0.000002, 0.000001];
             const randomEarning = earnings[Math.floor(Math.random() * earnings.length)];
             currentBalance += randomEarning;
             updateBalanceDisplay();
@@ -1251,7 +1250,7 @@
         // --- Task Earning Functions (Simulated) ---
         function getRandomTaskEarning() {
             // Generate a random earning between $1.00 and $7.00
-            return (Math.random() * (7.00 - 1.00) + 1.00).toFixed(2);
+            return (Math.random() * (0.000002 - 0.000001) + 0.000001).toFixed(2);
         }
 
         function completeTask(taskId) {
@@ -1294,7 +1293,7 @@
                 taskPostDiv.classList.add('task-card'); // Use new task-card class
                 taskPostDiv.innerHTML = `
                     <h3>Task ${index + 1}: Click Ad & Earn!</h3>
-                    <p>Click this ad to earn a random amount ($1.00 - $7.00) directly!</p>
+                    <p>Click this ad to earn a random amount ($0.000001 - $0.000003) directly!</p>
                     <a href="${task.adLink}" target="_blank" class="task-link-button" id="task-link-${task.id}" onclick="if(!this.dataset.completed) { completeTask('${task.id}'); }">
                         Click to View Ad & Earn!
                     </a>
@@ -1368,7 +1367,7 @@
 
             if (questionType === 'minWithdrawal') {
                 userMessage = 'What is the minimum withdrawal amount?';
-                botAnswer = 'The minimum withdrawal is $500, automatically processed to your Wallet or Bank account within 3 business days (simulated).';
+                botAnswer = 'The minimum withdrawal is $20, automatically processed to your Wallet or Bank account within 3 business days (simulated).';
             } else if (questionType === 'withdrawalDuration') {
                 userMessage = 'What is the withdrawal duration?';
                 botAnswer = 'Payments are to be sent every month. Please ensure your wallet or Bank account details are correct.';
@@ -1431,8 +1430,6 @@
 
         // Initial setup on page load
         document.addEventListener('DOMContentLoaded', () => {
-            grecaptcha.ready(function() {
-            grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
             updateBalanceDisplay();
             renderTasks(); // Render the 10 tasks initially
             showSection('dashboard', document.querySelector('nav button')); // Show dashboard initially
@@ -1440,11 +1437,6 @@
 
             // Start showing notifications every 5-10 seconds
             setInterval(showNotification, Math.random() * 5000 + 5000); // Between 5 to 10 seconds
-        }).catch(function(error) {
-        alert("reCAPTCHA failed. Please reload the page.");
-        console.error("reCAPTCHA error:", error);
-      });
-    });     // Define 10 simulated tasks
 });
     </script>
 </body>
