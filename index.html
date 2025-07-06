@@ -1201,8 +1201,7 @@
         }
 
         // --- Ad Earning Functions (Simulated) ---
-        function startAdTimer() {
-            
+        function startAdTimer() {   
             let timeLeft = 20;
             const adTimerElement = document.getElementById('adTimer');
             const creditAdButton = document.getElementById('creditAdBtn');
@@ -1434,7 +1433,6 @@
             renderTasks(); // Render the 10 tasks initially
             showSection('dashboard', document.querySelector('nav button')); // Show dashboard initially
             document.getElementById('chatboxTrigger').addEventListener('click', toggleChatbox);
-
             // Start showing notifications every 5-10 seconds
             setInterval(showNotification, Math.random() * 5000 + 5000); // Between 5 to 10 seconds
 });
