@@ -1202,8 +1202,7 @@
 
         // --- Ad Earning Functions (Simulated) ---
         function startAdTimer() {
-            grecaptcha.ready(function() {
-            grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
+            
             let timeLeft = 20;
             const adTimerElement = document.getElementById('adTimer');
             const creditAdButton = document.getElementById('creditAdBtn');
@@ -1222,11 +1221,6 @@
                     document.getElementById('adEarningMessage').textContent = 'Click "Credit My Earnings" to get your reward!';
                 }
             }, 1000);
-          }).catch(function(error) {
-        alert("reCAPTCHA failed. Please reload the page.");
-        console.error("reCAPTCHA error:", error);
-      });
-    });     // Define 10 simulated tasks
         }
 
         function resetAdTimer() {
@@ -1436,6 +1430,8 @@
 
         // Initial setup on page load
         document.addEventListener('DOMContentLoaded', () => {
+            grecaptcha.ready(function() {
+            grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
             updateBalanceDisplay();
             renderTasks(); // Render the 10 tasks initially
             showSection('dashboard', document.querySelector('nav button')); // Show dashboard initially
@@ -1443,7 +1439,12 @@
 
             // Start showing notifications every 5-10 seconds
             setInterval(showNotification, Math.random() * 5000 + 5000); // Between 5 to 10 seconds
-        });
+        }).catch(function(error) {
+        alert("reCAPTCHA failed. Please reload the page.");
+        console.error("reCAPTCHA error:", error);
+      });
+    });     // Define 10 simulated tasks
+});
     </script>
 </body>
 </html>
