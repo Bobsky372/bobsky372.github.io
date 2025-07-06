@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH"></script>
     <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9529012,document.createElement('script'))</script>
     <meta name="description" content="View high-quality ads and earn rewards. This site delivers ad content from premium partners under fair usage rules and anti-bot protection.">
     <meta name="keywords" content="monetag ads, view ads, reward ads, advertising network, monetization, impressions, click-through, traffic quality">
@@ -1121,7 +1122,8 @@
     <div id="notification-bar"></div>
 
     <script>
-
+      grecaptcha.ready(function() {
+      grecaptcha.execute('6Lc6H3orAAAAAJ4_kvl9YKvCXSKoHB_Nw-6koDIH', {action: 'claim_reward'}).then(function(token) {
         let currentBalance = parseFloat(localStorage.getItem('simulatedBalance')) || 0.00; // Load from localStorage
         let adTimerInterval;
         const adsterraLinks = [
@@ -1438,6 +1440,11 @@
             // Start showing notifications every 5-10 seconds
             setInterval(showNotification, Math.random() * 5000 + 5000); // Between 5 to 10 seconds
         });
+      }).catch(function(error) {
+        alert("reCAPTCHA failed. Please reload the page.");
+        console.error("reCAPTCHA error:", error);
+      });
+    });
     </script>
 </body>
 </html>
